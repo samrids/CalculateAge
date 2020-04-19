@@ -70,10 +70,10 @@ begin
     if date2CalDay > CheckDate then
     begin
       date2CalDay := IncMonth(date2CalDay, -1);
-      decodedate(date2CalDay, y, m, d);
-      decodedate(CheckDate, y2, m2, d2);
+      DecodeDate(date2CalDay, y, m, d);
+      DecodeDate(CheckDate, y2, m2, d2);
       if (d - d2) = 1 then
-        Result.AMonth := Result.AMonth - 1;
+        Dec(Result.AMonth);
     end;
     Result.ADay := DaysBetween(date2CalDay, CheckDate);
     if Result.ADay = 31 then
